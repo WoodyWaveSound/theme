@@ -13,8 +13,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: lightColorScheme, useMaterial3: true),
-      darkTheme: ThemeData(colorScheme: darkColorScheme, useMaterial3: true),
+      // theme: lightTheme,
+      // darkTheme: darkTheme,
+      theme: ThemeData(colorSchemeSeed: const Color(0xFF914C00)),
       debugShowCheckedModeBanner: false,
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -66,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
@@ -90,12 +91,24 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Image.asset(
+              logo,
+              package: "theme",
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            const Text(
+              '測試二二',
+              style: TextStyle(
+                fontFamily: "Iansui",
+                locale: Locale("zh", "TW"),
+              ),
+            ),
+            const Text(
+              "測試",
+              style: TextStyle(
+                fontFamily: "Iansui",
+                // fontFamily: "Iansui",
+                locale: Locale("zh", "TW"),
+              ),
             ),
           ],
         ),
